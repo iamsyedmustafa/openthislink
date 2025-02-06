@@ -16,6 +16,35 @@
             background: linear-gradient(to right, #f39c12, #f1c40f); /* Bright gradient background */
             font-family: 'Roboto', sans-serif;
             overflow: hidden;
+            text-align: center;
+        }
+
+        /* Style for the button */
+        .btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background-color: #2c3e50;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Change color when hovering over the button */
+        .btn:hover {
+            background-color: #34495e;
+        }
+
+        /* Style for the message */
+        .message {
+            font-size: 60px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 255, 255, 0.8);
+            display: none; /* Initially hidden */
+            font-family: 'Sacramento', cursive;
+            animation: slideIn 1.5s ease-out;
         }
 
         /* Animation for text */
@@ -30,25 +59,26 @@
             }
         }
 
-        /* Style for the message */
-        .message {
-            font-size: 60px;
-            font-weight: bold;
-            color: #fff;
-            text-align: center;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 255, 255, 0.8);
-            animation: slideIn 1.5s ease-out;
-        }
-
         /* Fancy font style from Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-        
-        .message {
-            font-family: 'Sacramento', cursive;
-        }
     </style>
 </head>
 <body>
+    <!-- Button that will appear initially -->
+    <button class="btn" onclick="showMessage()">Click here please</button>
+
+    <!-- Hidden message that will appear after the button is clicked -->
     <div class="message">JAZAKALLAH KHAIR</div>
+
+    <script>
+        // Function to display the message and hide the button
+        function showMessage() {
+            // Hide the button
+            document.querySelector('.btn').style.display = 'none';
+            
+            // Show the message
+            document.querySelector('.message').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
